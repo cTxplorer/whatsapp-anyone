@@ -1,0 +1,7 @@
+node_modules
+out
+public
+
+.next
+.netlify
+.DS_Store
