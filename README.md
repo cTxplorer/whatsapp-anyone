@@ -2,7 +2,7 @@
 
 WhatsApp Anyone is a tool to start WhatsApp chat with an unknown number, without need to save their contact.
 
-![screenshot](https://github.com/cTxplorer/whatsapp-anyone/blob/master/screenshot-iphonex.png)
+<img align="right" width="450" height="auto" src="https://github.com/cTxplorer/whatsapp-anyone/blob/master/screenshot-iphonex.png">
 
 ### Top features
   - Add to Home Screen (and keep it at armlength)
