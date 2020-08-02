@@ -8,13 +8,15 @@ class Form extends React.Component {
       // countryCode: '+91',
       contact: '',
       messageText: 'Hello 👋',
+      showCCPrompt: false,
     }
   }
 
   handleInputChange = (ev) => {
     const target = ev.target;
     this.setState({
-      [target.name]: target.value
+      [target.name]: target.value,
+      showCCPrompt: target.name === 'contact' && target.value.length > 2 && target.value.length < 8,
     });
   }
 
@@ -32,12 +34,17 @@ class Form extends React.Component {
     return (
 
       <form className="wa-form" onSubmit={this.handleSubmit}>
+        <div className={`error ${this.state.showCCPrompt ? 'error-visible' : ''}`}>
+          <div class="arrow">⤴</div> <div> make sure to enter country code</div>
+        </div>
         <div className="form-inputs">
           <input
-            type="tel"
+            type="number"
             name="contact"
             onChange={this.handleInputChange}
-            placeholder="Contact no with country code" />
+            minLength="8"
+            maxLength="15"
+            placeholder="Contact number" />
           <button type="submit">SEND</button>
         </div>
       </form>

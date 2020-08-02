@@ -74,9 +74,9 @@ const HomePage = () => {
         <footer>
           <div className="creds">
             {/* <span class="c-accent">♥&nbsp;</span> */}
-            Designed by <a href="https://twitter.com/nzeus_nisarg610" target="__blank">Nisarg </a>
-            //
-            Developed by <a href="https://twitter.com/@pGxplorer_" target="__blank">Pratik</a>
+            👨🏻‍🎨 <a href="https://twitter.com/nzeus_nisarg610" target="__blank">Nisarg </a>
+            /
+            <a href="https://twitter.com/@pGxplorer_" target="__blank"> Pratik</a> 👨🏼‍💻
             {/* <span class="c-accent">&nbsp;🇮🇳</span> */}
           </div>
         </footer>

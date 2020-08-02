@@ -5,7 +5,8 @@ html {
   --text-xs: 12px;
   --text-sm: 16px;
   --text-md: 20px;
-  --text-lg: 34px;
+  --text-lg: 26px;
+  --text-xl: 34px;
 
   --fontFamily: Manrope, sans-serif;
 
@@ -80,7 +81,7 @@ header {
 }
 
 .title {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   text-align: center;
   width: min-content;
   width: -webkit-min-content;
@@ -133,9 +134,15 @@ header {
   outline: none;
 }
 
-.wa-form input[type="tel"] {
+.wa-form input[type="number"] {
   flex-grow: 1;
   margin-right: var(--input-spacing);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .wa-form button[type="submit"] {
@@ -147,6 +154,33 @@ header {
 
 .wa-form button[type="submit"]:active {
   top: 2px;
+}
+
+.error {
+  display: flex;
+  align-items: stretch;
+  padding-left: 16px;
+  font-size: var(--text-xs);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.error-visible {
+  opacity: 0.8;
+}
+
+.error > * {
+  display: inline-block;
+}
+
+.error > *:last-child  {
+  position: relative;
+  bottom: 6px;
+  padding-left: 4px;
+}
+
+.error .arrow {
+  transform: rotateZ(180deg);
 }
 
 /* FOOTER */
@@ -169,11 +203,20 @@ footer {
   color: var(--c-accent);
 }
 
-@media only screen and (min-device-height: 600px) and (min-device-width: 320px) {
-  .features-ul {
-    /* text-align: center; */
+@media only screen and (max-device-height: 600px) {
+  .logo {
+    height: 56px;
   }
 
+  .title {
+    font-size: var(--text-lg);
+    width: unset;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+}
+
+@media only screen and (min-device-height: 600px) and (min-device-width: 320px) {
   .feature-li h3 {
     margin-top: var(--space-md)
   }
