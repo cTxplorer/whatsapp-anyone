@@ -16,7 +16,7 @@ class Form extends React.Component {
     const target = ev.target;
     this.setState({
       [target.name]: target.value,
-      showCCPrompt: target.name === 'contact' && target.value.length > 2 && target.value.length < 8,
+      showCCPrompt: target.name === 'contact' && target.value.length > 0,
     });
   }
 
