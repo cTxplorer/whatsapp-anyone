@@ -1,4 +1,3 @@
-import Header from './Header';
 import Head from 'next/head';
 
 const Layout = (props) => (
@@ -7,8 +6,8 @@ const Layout = (props) => (
       <meta charSet="UTF-8" />
       <meta name="description" content="Whatsapp to anyone without saving their contact" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="theme-color" content="#25D366" />
-      <title>Whatsapp anyone, easily</title>
+      <meta name="theme-color" content="#191919" />
+      <title>WhatsApp Anyone, easily</title>
 
       <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
       <meta name="apple-mobile-web-app-title" content="Whatsapp anyone, easily" />
@@ -21,7 +20,9 @@ const Layout = (props) => (
       <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
       <link rel="manifest" href="/manifest.json" />
       {/* <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" /> */}
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
+
+      {/* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" /> */}
 
       {/* Global site tag (gtag.js) - Google Analytics */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173602150-1"></script>
@@ -50,11 +51,7 @@ const Layout = (props) => (
       }}
     />
 
-
-    {/* <Header /> */}
-    <div className="container mt-3 text-center">
-      {props.children}
-    </div>
+    {props.children}
   </>
 );
 

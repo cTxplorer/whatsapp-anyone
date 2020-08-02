@@ -7,7 +7,7 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
-          <meta name="theme-color" content="#000000" />
+          <meta name="theme-color" content="#191919" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="icon" href="/icons/icon-92x92" />
         </Head>

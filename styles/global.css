@@ -1,0 +1,155 @@
+
+/* SHAPER */
+/* https://hihayk.github.io/shaper/#Manrope,%20Sans Serif/1.32/0.96/1.43/0.71/1.53/0.5/161/100/50/0/0.62/2/false */
+html {
+  --text-sm: 16px;
+  --text-md: 20px;
+  --text-lg: 34px;
+
+  --fontFamily: Manrope, sans-serif;
+
+  --space-sm: 16px;
+  --space-md: 24px;
+
+  --input-height: 56px;
+  --input-spacing: 14px;
+  --input-padding: 12px;
+
+  --c-background: #191919;
+  --c-body: #FFFFFF;
+  --c-accent: #00FFAF;
+  --c-buttonBg: #FFFFFF;
+
+  --border-radius: 0.625rem;
+  --fieldBorderWidth: 2px;
+}
+
+body {
+  background-color: var(--c-background);
+  color: var(--c-body);
+  font-family: var(--fontFamily);
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-sm);
+  height: calc(100vh - 2*var(--space-sm));
+}
+
+#__next {
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  max-height: 650px;
+}
+
+/* FULL PAGE */
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 1px;
+}
+
+/* MAIN SECTION */
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* TOP SECTION */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+}
+
+.title {
+  font-size: var(--text-lg);
+  text-align: center;
+  width: min-content;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+}
+
+/* FEATURES SECTION */
+.features-ul {
+  font-size: var(--text-sm);
+  /* padding-left: 20px; */
+}
+.feature-li {
+  list-style-image:url(/icons/double-tick.svg);
+}
+
+.feature-li h3 {
+  margin-top: var(--space-sm);
+  margin-bottom: 8px;
+  font-size: var(--text-md);
+  font-weight: 800;
+}
+
+.feature-li div {
+  font-size: 400;
+  font-weight: var(--text-sm);
+}
+
+.a2hs {
+  color: var(--c-accent);
+  text-decoration: underline;
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+
+.text-deco-none {
+  text-decoration: none;
+  color: var(--c-body)
+}
+
+/* INPUT SECTION */
+.wa-form .form-inputs {
+  display: flex;
+  font-size: var(--text-md);
+}
+
+.wa-form .form-inputs > * {
+  padding: var(--input-padding);
+  border-radius: var(--border-radius);
+  border: var(--fieldBorderWidth) solid var(--c-accent);
+  outline: none;
+}
+
+.wa-form input[type="tel"] {
+  flex-grow: 1;
+  margin-right: var(--input-spacing);
+}
+
+.wa-form button[type="submit"] {
+  min-width: 80px;
+  background-color: var(--c-accent);
+  position: relative;
+  transition: 0.1s ease-in;
+}
+
+.wa-form button[type="submit"]:active {
+  top: 2px;
+}
+
+@media only screen and (min-device-height: 600px) and (min-device-width: 320px) {
+  .features-ul {
+    /* text-align: center; */
+  }
+
+  .feature-li h3 {
+    margin-top: var(--space-md)
+  }
+}
