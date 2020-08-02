@@ -15,15 +15,10 @@ const HomePage = () => {
       updateShowA2HS(true);
       updatedDeferredPrompt(e);
     });
-
-    setTimeout(
-      ()=>updateShowA2HS(true),
-      2000
-    )
   }, []);
 
   const onA2hsClickHandler = () => {
-    if(deferredPrompt) {
+    if (deferredPrompt) {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
@@ -46,7 +41,7 @@ const HomePage = () => {
             <ul className="features-ul">
               <li className="feature-li">
                 <h3>Hassle free&nbsp;🧘‍♀️</h3>
-                <div>no need to save contact to WhatsApp someone</div>
+                <div>no need to save contact to chat with someone</div>
                 {/* <div>no need to save contact</div> */}
               </li>
               <li className="feature-li">
@@ -57,29 +52,21 @@ const HomePage = () => {
                 <h3>Just a tap away&nbsp;🚀</h3>
                 <div>
                   <div onClick={onA2hsClickHandler} className={`a2hs ${showA2HS ? 'a2hs-loaded' : ''}`}>
-                    { showA2HS ? 'add me to home screen' : 'quicker than quickest..' }
+                    {showA2HS ? 'add me to home screen' : 'quicker than quickest..'}
                   </div>
                 </div>
               </li>
             </ul>
             <Form />
 
-            {/* <form className="wa-form">
-              <div className="form-inputs">
-                <input type="tel" placeholder="+91 98760453210" />
-                <button type="submit">SEND</button>
-              </div>
-            </form> */}
           </main>
-        <footer>
-          <div className="creds">
-            {/* <span class="c-accent">♥&nbsp;</span> */}
-            👨🏻‍🎨 <a href="https://twitter.com/nzeus_nisarg610" target="__blank">Nisarg </a>
+          <footer>
+            <div className="creds">
+              👨🏻‍🎨 <a href="https://twitter.com/nzeus_nisarg610" target="__blank">Nisarg </a>
             /
             <a href="https://twitter.com/@pGxplorer_" target="__blank"> Pratik</a> 👨🏼‍💻
-            {/* <span class="c-accent">&nbsp;🇮🇳</span> */}
           </div>
-        </footer>
+          </footer>
         </div>
       </Layout>
     </>

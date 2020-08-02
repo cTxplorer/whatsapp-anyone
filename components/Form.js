@@ -35,7 +35,7 @@ class Form extends React.Component {
 
       <form className="wa-form" onSubmit={this.handleSubmit}>
         <div className={`error ${this.state.showCCPrompt ? 'error-visible' : ''}`}>
-          <div class="arrow">⤴</div> <div> make sure to enter country code</div>
+          <div className="arrow">⤴</div> <div> make sure to enter country code</div>
         </div>
         <div className="form-inputs">
           <input

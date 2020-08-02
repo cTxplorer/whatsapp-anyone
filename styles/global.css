@@ -216,15 +216,15 @@ footer {
   }
 }
 
-@media only screen and (min-device-height: 600px) and (min-device-width: 320px) {
+@media only screen and (min-device-height: 800px) and (min-device-width: 320px) {
   .feature-li h3 {
     margin-top: var(--space-md)
   }
 
-  footer {
+  /* footer {
     position: absolute;
     bottom: 20px;
     left: 0;
     right: 0;
-  }
+  } */
 }

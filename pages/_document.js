@@ -8,7 +8,6 @@ export default class MyDocument extends Document {
       <html lang="en">
         <Head>
           <meta charSet="UTF-8" />
-          <meta name="description" content="Whatsapp to anyone without saving their contact" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
 
           <meta name="application-name" content="Whatsapp Anyone" />
