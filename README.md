@@ -48,6 +48,7 @@ Open your favorite editor and start contributing!
 
  - Add country code drop down
  - Contact number validation
+ - language localization
  - Improve styling on larger screens
  - add code comments
 
