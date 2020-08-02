@@ -37,7 +37,7 @@ class Form extends React.Component {
             type="tel"
             name="contact"
             onChange={this.handleInputChange}
-            placeholder="91 98760 453210" />
+            placeholder="Contact no with country code" />
           <button type="submit">SEND</button>
         </div>
       </form>

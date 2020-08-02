@@ -2,6 +2,7 @@
 /* SHAPER */
 /* https://hihayk.github.io/shaper/#Manrope,%20Sans Serif/1.32/0.96/1.43/0.71/1.53/0.5/161/100/50/0/0.62/2/false */
 html {
+  --text-xs: 12px;
   --text-sm: 16px;
   --text-md: 20px;
   --text-lg: 34px;
@@ -44,6 +45,10 @@ body {
   max-width: 400px;
   height: 100%;
   max-height: 650px;
+}
+
+a, a:hover, a:focus, a:visited, a:active {
+  color: var(--c-accent);
 }
 
 /* FULL PAGE */
@@ -99,20 +104,20 @@ header {
 }
 
 .feature-li div {
-  font-size: 400;
   font-weight: var(--text-sm);
+  opacity: 0.9;
 }
 
 .a2hs {
-  color: var(--c-accent);
-  text-decoration: underline;
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
+  transition: all 0.5s ease-in;
+  /* opacity: 0.5; */
 }
 
-.text-deco-none {
-  text-decoration: none;
-  color: var(--c-body)
+.a2hs-loaded {
+  opacity: 1 !important;
+  text-decoration: underline;
+  color: var(--c-accent);
+  cursor: pointer;
 }
 
 /* INPUT SECTION */
@@ -144,6 +149,26 @@ header {
   top: 2px;
 }
 
+/* FOOTER */
+footer {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: monospace;
+}
+
+.creds {
+  text-align: center;
+  font-size: var(--text-xs);
+}
+
+.creds a {
+  text-decoration: none;
+}
+
+.c-accent {
+  color: var(--c-accent);
+}
+
 @media only screen and (min-device-height: 600px) and (min-device-width: 320px) {
   .features-ul {
     /* text-align: center; */
@@ -151,5 +176,12 @@ header {
 
   .feature-li h3 {
     margin-top: var(--space-md)
+  }
+
+  footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
   }
 }

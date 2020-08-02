@@ -3,23 +3,8 @@ import Head from 'next/head';
 const Layout = (props) => (
   <>
     <Head>
-      <meta charSet="UTF-8" />
-      <meta name="description" content="Whatsapp to anyone without saving their contact" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="theme-color" content="#191919" />
       <title>WhatsApp Anyone, easily</title>
 
-      <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-      <meta name="apple-mobile-web-app-title" content="Whatsapp anyone, easily" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="mobile-web-app-capable" content="yes" />
-
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-      <link rel="manifest" href="/manifest.json" />
-      {/* <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5" /> */}
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
 
       {/* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" /> */}
