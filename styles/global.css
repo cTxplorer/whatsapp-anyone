@@ -128,26 +128,29 @@ header {
 }
 
 .wa-form .form-inputs > * {
-  padding: var(--input-padding);
   border-radius: var(--border-radius);
-  border: var(--fieldBorderWidth) solid var(--c-accent);
   outline: none;
 }
 
-.wa-form input[type="number"] {
-  flex-grow: 1;
-  margin-right: var(--input-spacing);
+.wa-form input[type="tel"] {
+  padding:var(--input-padding);
+  border-radius: var(--border-radius);
+  border:var(--fieldBorderWidth) solid var(--c-accent);
+  outline:none;
+  height: 100%;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=tel]::-webkit-inner-spin-button,
+input[type=tel]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 .wa-form button[type="submit"] {
+  margin-left: 10px;
   min-width: 80px;
   background-color: var(--c-accent);
+  border: var(--fieldBorderWidth) solid var(--c-accent);
   position: relative;
   transition: 0.1s ease-in;
 }
