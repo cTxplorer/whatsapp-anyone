@@ -1,29 +1,42 @@
 import React from 'react';
+import IntlTelInput from 'react-intl-tel-input';
 import CountryDropdown from './CountryDropdown';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // countryCode: '+91',
+      countryCode: '+91',
       contact: '',
       messageText: 'Hello 👋',
       showCCPrompt: false,
     }
   }
 
-  handleInputChange = (ev) => {
-    const target = ev.target;
+  handleInputChange = (a, b, c) => {
+    // console.log(a);
+    // console.log(b);
+    // console.log(c);
+
+    // const target = ev.target;
     this.setState({
-      [target.name]: target.value,
-      showCCPrompt: target.name === 'contact' && target.value.length > 0,
+      countryCode: `+${c.dialCode}`.replace(/[^0-9]/g, ''),
+      contact: b.replace(/[^0-9]/g, ''),
+      
     });
+  }
+
+  handleFlagChange = (a,b,c,d) => {
+    
+    this.setState({
+      countryCode: `+${b.dialCode}`.replace(/[^0-9]/g, ''),
+    })
   }
 
   handleSubmit = (ev) => {
     ev.preventDefault();
 
-    const fullContact = this.state.contact;
+    const fullContact = this.state.countryCode + this.state.contact;
     const encodedMsg = encodeURIComponent(this.state.messageText);
 
     const waLink = `https://wa.me/${fullContact}?text=${encodedMsg}`;
@@ -38,13 +51,22 @@ class Form extends React.Component {
           <div className="arrow">⤴</div> <div> make sure to enter country code</div>
         </div>
         <div className="form-inputs">
-          <input
+          {/* <input
             type="number"
             name="contact"
             onChange={this.handleInputChange}
             minLength="8"
             maxLength="15"
-            placeholder="Contact number" />
+            placeholder="Contact number" /> */}
+            <IntlTelInput
+            preferredCountries={['in']}
+            containerClassName="intl-tel-input"
+            inputClassName="form-control"
+            fieldName="contact"
+            onPhoneNumberChange={this.handleInputChange}
+            onSelectFlag={this.handleFlagChange}
+      // onPhoneNumberBlur={onBlur()}
+    />
           <button type="submit">SEND</button>
         </div>
       </form>
