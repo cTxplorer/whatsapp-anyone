@@ -50,14 +50,14 @@ class Form extends React.Component {
     return (
 
       <form className="wa-form" onSubmit={this.handleSubmit}>
-        <div className={`error ${this.state.showCCPrompt ? 'visible' : ''}`}>
+        {/* <div className={`error ${this.state.showCCPrompt ? 'visible' : ''}`}>
           <div className="arrow">⤴</div> <div> contact seems to be incorrect 👀</div>
-        </div>
+        </div> */}
         <div className="form-inputs">
           <IntlTelInput
             preferredCountries={['in','us','ca','de']}
             containerClassName="intl-tel-input"
-            inputClassName="form-control"
+            inputClassName={this.state.showCCPrompt ? 'show-error' : ''}
             fieldName="contact"
             onPhoneNumberChange={this.onPhoneNumberChange}
             onSelectFlag={this.onSelectFlag}
