@@ -224,6 +224,7 @@ footer {
 .creds {
   text-align: center;
   font-size: var(--text-xs);
+  opacity: 0.7;
 }
 
 .creds a {
