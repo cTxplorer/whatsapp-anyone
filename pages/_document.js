@@ -45,7 +45,7 @@ export default class MyDocument extends Document {
           <meta property="twitter:url" content="https://whatsapp-anyone.netlify.app/" />
           <meta property="twitter:title" content="WhatsApp Anyone - without saving contact 🚀" />
           <meta property="twitter:description" content=".. and you can add it to your home screen ✨ hassle-free / secure / pwa-ready" />
-          <meta property="twitter:image" ontent="/meta-image.png" />
+          <meta property="twitter:image" content="/meta-image.png" />
         </Head>
         <body>
           <Main />
