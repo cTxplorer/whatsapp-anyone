@@ -140,14 +140,8 @@ header {
   height: 100%;
 }
 
-input[type=tel]::-webkit-inner-spin-button,
-input[type=tel]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 .wa-form button[type="submit"] {
-  margin-left: 10px;
+  margin-left: var(--input-spacing);
   min-width: 80px;
   background-color: var(--c-accent);
   border: var(--fieldBorderWidth) solid var(--c-accent);
