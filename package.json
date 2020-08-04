@@ -20,6 +20,7 @@
     "next": "^9.4.4",
     "next-offline": "^5.0.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-intl-tel-input": "^8.0.4"
   }
 }

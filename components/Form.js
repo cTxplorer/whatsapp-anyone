@@ -1,22 +1,31 @@
 import React from 'react';
+import IntlTelInput from 'react-intl-tel-input';
 import CountryDropdown from './CountryDropdown';
 
 class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // countryCode: '+91',
+      contactVal: '',
       contact: '',
       messageText: 'Hello 👋',
       showCCPrompt: false,
     }
   }
 
-  handleInputChange = (ev) => {
-    const target = ev.target;
+  onSelectFlag = (inputVal, countryDetails, number, isValid) => {
     this.setState({
-      [target.name]: target.value,
-      showCCPrompt: target.name === 'contact' && target.value.length > 0,
+      contactVal: inputVal.replace(/[^0-9]/g, ''),
+      contact: number.replace(/[^0-9]/g, ''),
+      isValid
+    });
+  }
+
+  onPhoneNumberChange = (isValid, inputVal, countryDetails, number) => {
+    this.setState({
+      contactVal: inputVal.replace(/[^0-9]/g, ''),
+      contact: number.replace(/[^0-9]/g, ''),
+      isValid
     });
   }
 
@@ -24,6 +33,7 @@ class Form extends React.Component {
     ev.preventDefault();
 
     const fullContact = this.state.contact;
+
     const encodedMsg = encodeURIComponent(this.state.messageText);
 
     const waLink = `https://wa.me/${fullContact}?text=${encodedMsg}`;
@@ -38,13 +48,14 @@ class Form extends React.Component {
           <div className="arrow">⤴</div> <div> make sure to enter country code</div>
         </div>
         <div className="form-inputs">
-          <input
-            type="number"
-            name="contact"
-            onChange={this.handleInputChange}
-            minLength="8"
-            maxLength="15"
-            placeholder="Contact number" />
+            <IntlTelInput
+            preferredCountries={['in','us','ca','de']}
+            containerClassName="intl-tel-input"
+            inputClassName="form-control"
+            fieldName="contact"
+            onPhoneNumberChange={this.onPhoneNumberChange}
+            onSelectFlag={this.onSelectFlag}
+    />
           <button type="submit">SEND</button>
         </div>
       </form>
