@@ -51,7 +51,7 @@ class Form extends React.Component {
 
       <form className="wa-form" onSubmit={this.handleSubmit}>
         <div className={`error ${this.state.showCCPrompt ? 'visible' : ''}`}>
-          <div className="arrow">⤴</div> <div> make sure to enter country code</div>
+          <div className="arrow">⤴</div> <div> contact seems to be incorrect 👀</div>
         </div>
         <div className="form-inputs">
           <IntlTelInput
