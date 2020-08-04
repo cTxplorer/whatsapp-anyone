@@ -17,7 +17,8 @@ class Form extends React.Component {
     this.setState({
       contactVal: inputVal.replace(/[^0-9]/g, ''),
       contact: number.replace(/[^0-9]/g, ''),
-      isValid
+      isValid,
+      showCCPrompt: false,
     });
   }
 
@@ -25,7 +26,8 @@ class Form extends React.Component {
     this.setState({
       contactVal: inputVal.replace(/[^0-9]/g, ''),
       contact: number.replace(/[^0-9]/g, ''),
-      isValid
+      isValid,
+      showCCPrompt: false,
     });
   }
 
@@ -36,27 +38,31 @@ class Form extends React.Component {
 
     const encodedMsg = encodeURIComponent(this.state.messageText);
 
-    const waLink = `https://wa.me/${fullContact}?text=${encodedMsg}`;
-    window.open(waLink, "_black");
+    if (this.state.isValid) {
+      const waLink = `https://wa.me/${fullContact}?text=${encodedMsg}`;
+      window.open(waLink, "_black");
+    } else {
+      this.setState({ showCCPrompt: true })
+    }
   }
 
   render() {
     return (
 
       <form className="wa-form" onSubmit={this.handleSubmit}>
-        <div className={`error ${this.state.showCCPrompt ? 'error-visible' : ''}`}>
+        <div className={`error ${this.state.showCCPrompt ? 'visible' : ''}`}>
           <div className="arrow">⤴</div> <div> make sure to enter country code</div>
         </div>
         <div className="form-inputs">
-            <IntlTelInput
+          <IntlTelInput
             preferredCountries={['in','us','ca','de']}
             containerClassName="intl-tel-input"
             inputClassName="form-control"
             fieldName="contact"
             onPhoneNumberChange={this.onPhoneNumberChange}
             onSelectFlag={this.onSelectFlag}
-    />
-          <button type="submit">SEND</button>
+          />
+          <button type="submit" style={{opacity: this.state.isValid ? 1 : 0.7}}>SEND</button>
         </div>
       </form>
       // <>
