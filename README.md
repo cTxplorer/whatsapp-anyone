@@ -10,12 +10,14 @@ WhatsApp Anyone is a tool to start WhatsApp chat with an unknown number, without
   - Add to Home Screen (and keep it at armlength)
   - Secure (no contact data collection)
   - Minimalist UI (to get things done)
+  - Country drop down for smooth interaction
 
 
 ### Tech
 * [next.js](nextjs.org) (a [react.js](reactjs.org) framework) - for server side rendering
 * [next-offline](https://github.com/hanford/next-offline) - for PWA
 * vanilla HTML & CSS
+* [React-Intl-Tel-Input](https://www.npmjs.com/package/react-intl-tel-input)
 
 
 ### Installation
@@ -46,11 +48,13 @@ Open your favorite editor and start contributing!
 
 ### Todos
 
- - Add country code drop down
- - Contact number validation
  - language localization
  - Improve styling on larger screens
  - add code comments
+ - add contributing.md file
+ - bug fixes
+   - desktop screen: country dropdown shows up below input, and on hover, moves above input
+
 
 ### License
 ----
