@@ -34,15 +34,17 @@ class Form extends React.Component {
   handleSubmit = (ev) => {
     ev.preventDefault();
 
-    const fullContact = this.state.contact;
-
-    const encodedMsg = encodeURIComponent(this.state.messageText);
-
     if (this.state.isValid) {
+      const fullContact = this.state.contact;
+      const encodedMsg = encodeURIComponent(this.state.messageText);
       const waLink = `https://wa.me/${fullContact}?text=${encodedMsg}`;
-      window.open(waLink, "_black");
+      window.open(waLink, "_blank");
     } else {
-      this.setState({ showCCPrompt: true })
+      document
+        .getElementsByClassName('wa-form')[0]
+        .getElementsByTagName('input')[0]
+        .focus();
+      this.setState({ showCCPrompt: true });
     }
   }
 
