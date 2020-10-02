@@ -1,4 +1,4 @@
-# WhatsaApp Anyone
+# WhatsApp Anyone
 
 WhatsApp Anyone is a tool to start WhatsApp chat with an unknown number, without need to save their contact.
 
