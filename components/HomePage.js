@@ -11,7 +11,6 @@ const HomePage = () => {
 
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
       updateShowA2HS(true);
       updatedDeferredPrompt(e);
     });
@@ -32,41 +31,39 @@ const HomePage = () => {
     <>
       <Layout>
         <div className="app">
+          {/* start:header section */}
           <header>
             <img src="icons/icon.svg" className="logo" alt="" />
             <h1 className="title">WhatsApp Anyone</h1>
+            <p className="subtitle"><em>without saving contact number</em></p>
           </header>
+          {/* end:header section */}
 
+          {/* start:input fields */}
           <main>
-            <ul className="features-ul">
-              <li className="feature-li">
-                <h3>Hassle free&nbsp;🧘‍♀️</h3>
-                <div>no need to save contact to chat with someone</div>
-                {/* <div>no need to save contact</div> */}
-              </li>
-              <li className="feature-li">
-                <h3>Fully secure&nbsp;🙇🏻‍♂️</h3>
-                <div>contact data stays in your mobile</div>
-              </li>
-              <li className="feature-li">
-                <h3>Just a tap away&nbsp;🚀</h3>
-                <div>
-                  <div onClick={onA2hsClickHandler} className={`a2hs ${showA2HS ? 'a2hs-loaded' : ''}`}>
-                    {showA2HS ? 'add me to home screen' : 'quicker than quickest..'}
-                  </div>
-                </div>
-              </li>
-            </ul>
             <Form />
-
           </main>
-          {/* <footer>
+          {/* end:input fields */}
+
+          {/* start:add to homescreen section */}
+          <aside>
+            <div onClick={onA2hsClickHandler} className={`a2hs ${showA2HS ? 'a2hs-loaded' : ''}`}>
+              {showA2HS ? 'add this tool to your home screen' : ''}
+            </div>
+          </aside>
+          {/* end:add to homescreen section */}
+
+          {/* start:footer section */}
+          <footer>
             <div className="creds">
-              👨🏻‍🎨 <a href="https://twitter.com/nzeus_nisarg610" target="__blank">Nisarg </a>
-            /
-            <a href="https://twitter.com/@pGxplorer_" target="__blank"> Pratik</a> 👨🏼‍💻
-          </div>
-          </footer> */}
+              👨🏻‍🎨
+              <a href="https://www.linkedin.com/in/nisarg-rajpura/" target="__blank"> Nisarg </a>
+              x
+              <a href="https://www.linkedin.com/in/pratikgadhiya/" target="__blank"> Pratik </a>
+              👨🏼‍💻
+            </div>
+          </footer>
+          {/* end:footer section */}
         </div>
       </Layout>
     </>
