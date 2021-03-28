@@ -38,14 +38,14 @@ export default class MyDocument extends Document {
           <meta property="og:url" content="https://whatsapp-anyone.netlify.app/" />
           <meta property="og:title" content="WhatsApp Anyone - without saving contact 🚀" />
           <meta property="og:description" content=".. and you can add it to your home screen ✨ hassle-free / secure / pwa-ready" />
-          <meta property="og:image" content="/meta-image.png" />
+          <meta property="og:image" content="/meta-image-01.png" />
 
           {/* Twitter */}
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://whatsapp-anyone.netlify.app/" />
           <meta property="twitter:title" content="WhatsApp Anyone - without saving contact 🚀" />
           <meta property="twitter:description" content=".. and you can add it to your home screen ✨ hassle-free / secure / pwa-ready" />
-          <meta property="twitter:image" content="/meta-image.png" />
+          <meta property="twitter:image" content="/meta-image-01.png" />
         </Head>
         <body>
           <Main />
