@@ -18,6 +18,9 @@ export default class MyDocument extends Document {
 
           <link rel="manifest" href="/manifest.json" />
 
+          <link rel="canonical" href="https://whatsapp-anyone.pgxplorer.dev"></link>
+
+
           <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
@@ -31,20 +34,20 @@ export default class MyDocument extends Document {
 
           {/* Primary Meta Tags */}
           <meta name="title" content="WhatsApp Anyone - without saving contact 🚀" />
-          <meta name="description" content=".. and you can add it to your home screen ✨ hassle-free / secure / pwa-ready" />
+          <meta name="description" content="Enter a mobile number to open direct Whatsapp chat. It's safe & secure. You may add it to home screen for faster access" />
 
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://whatsapp-anyone.netlify.app/" />
+          <meta property="og:url" content="https://whatsapp-anyone.pgxplorer.dev" />
           <meta property="og:title" content="WhatsApp Anyone - without saving contact 🚀" />
-          <meta property="og:description" content=".. and you can add it to your home screen ✨ hassle-free / secure / pwa-ready" />
+          <meta property="og:description" content="Enter a mobile number to open direct Whatsapp chat. It's safe & secure. You may add it to home screen for faster access" />
           <meta property="og:image" content="/meta-image-01.png" />
 
           {/* Twitter */}
           <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://whatsapp-anyone.netlify.app/" />
+          <meta property="twitter:url" content="https://whatsapp-anyone.pgxplorer.dev" />
           <meta property="twitter:title" content="WhatsApp Anyone - without saving contact 🚀" />
-          <meta property="twitter:description" content=".. and you can add it to your home screen ✨ hassle-free / secure / pwa-ready" />
+          <meta property="twitter:description" content="Enter a mobile number to open direct Whatsapp chat. It's safe & secure. You may add it to home screen for faster access" />
           <meta property="twitter:image" content="/meta-image-01.png" />
         </Head>
         <body>
