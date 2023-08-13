@@ -2,9 +2,9 @@
 
 WhatsApp Anyone is a tool to start WhatsApp chat with an unknown number, without need to save their contact.
 
-> Live @ https://whatsapp-anyone.netlify.app
+> Live @ https://whatsapp-anyone.pgxplorer.dev
 
-[<img align="right" width="450" height="auto" src="https://github.com/cTxplorer/whatsapp-anyone/blob/production/screenshot-iphonex.png">](https://whatsapp-anyone.netlify.app/)
+[<img align="right" width="450" height="auto" src="https://github.com/cTxplorer/whatsapp-anyone/blob/production/screenshot-iphonex.png">](https://whatsapp-anyone.pgxplorer.dev)
 
 ### Top features
   - Add to Home Screen (and keep it at armlength)
