@@ -4,3 +4,4 @@ out
 .next
 .netlify
 .DS_Store
+.env.local

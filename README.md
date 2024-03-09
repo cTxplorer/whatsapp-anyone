@@ -4,13 +4,14 @@ WhatsApp Anyone is a tool to start WhatsApp chat with an unknown number, without
 
 > Live @ https://whatsapp-anyone.pgxplorer.dev
 
-[<img align="right" width="450" height="auto" src="https://github.com/cTxplorer/whatsapp-anyone/blob/production/screenshot-iphonex.png">](https://whatsapp-anyone.pgxplorer.dev)
+[<img align="right" width="450" height="auto" src=https://whatsapp-anyone.pgxplorer.dev/meta-image-02.png">](https://whatsapp-anyone.pgxplorer.dev)
 
 ### Top features
-  - Add to Home Screen (and keep it at armlength)
-  - Secure (no contact data collection)
+  - Add to Home Screen (for quick access)
+  - Secure (your personal data is not saved)
   - Minimalist UI (to get things done)
-  - Country drop down for smooth interaction
+  - Country drop down for fast interaction
+  - Dark & light theme
 
 
 ### Tech
@@ -52,8 +53,6 @@ Open your favorite editor and start contributing!
  - Improve styling on larger screens
  - add code comments
  - add contributing.md file
- - bug fixes
-   - desktop screen: country dropdown shows up below input, and on hover, moves above input
 
 
 ### License

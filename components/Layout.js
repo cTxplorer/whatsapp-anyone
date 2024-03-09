@@ -3,7 +3,7 @@ import Head from 'next/head';
 const Layout = (props) => (
   <>
     <Head>
-      <title>WhatsApp Anyone, easily</title>
+      <title>WhatsApp without saving number- WhatsApp Anyone app</title>
 
       <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet" />
 
