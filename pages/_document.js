@@ -22,6 +22,8 @@ export default class MyDocument extends Document {
 
           <link rel="canonical" href={websiteUrl}></link>
 
+          {process.env.BUILD_ENV !== 'production' && <meta name="robots" content="noindex, nofollow" />}
+
           <link rel="icon" href="favicon/favicon.ico" />
           <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />

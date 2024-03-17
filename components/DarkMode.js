@@ -38,8 +38,8 @@ const DarkMode = ({ children }) => {
   return (
     <>
       <span onClick={toggleDarkMode} style={{ position: "fixed", top: 16, right: 16, backdropFilter: 'blur(4px)' }}>
-        <img className="moon" src="icons/moon.png" alt="Turn on dark mode" title="Turn on dark mode" role="button" tabIndex="0" />
-        <img className="sun" src="icons/sun.png" alt="Turn off dark mode" title="Turn off dark mode" role="button" tabIndex="0" />
+        <img className="moon" src="/icons/moon.png" alt="Turn on dark mode" title="Turn on dark mode" role="button" tabIndex="0" />
+        <img className="sun" src="/icons/sun.png" alt="Turn off dark mode" title="Turn off dark mode" role="button" tabIndex="0" />
       </span>
       {children}
     </>

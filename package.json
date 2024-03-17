@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "BUILD_ENV=development next build",
+    "build-prod": "BUILD_ENV=production next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "rm -f public/service-worker.js && next build && next export && netlify deploy --dir out",
-    "deploy-prod": "rm -f public/service-worker.js && next build && next export && netlify deploy --prod --dir out"
+    "deploy": "rm -f public/service-worker.js && npm run build && next export && netlify deploy --dir out",
+    "deploy-prod": "rm -f public/service-worker.js && npm run build-prod && next export && netlify deploy --prod --dir out"
   },
   "keywords": [],
   "author": "",

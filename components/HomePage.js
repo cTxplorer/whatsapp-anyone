@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Head from 'next/head';
 import { useContext } from 'react';
 import { CountryContext } from '../context/CountryContext';
 import Layout from './Layout';

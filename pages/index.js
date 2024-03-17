@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import HomePage from '../components/HomePage';
-import DarkMode from '../components/DarkMode';
 import { CountryContext } from '../context/CountryContext';
 
 const App = () => {
@@ -23,11 +22,11 @@ const App = () => {
             .catch(err => console.error(err));
         }
     }, []);
-    return <DarkMode>
+    return (
         <CountryContext.Provider value={countryFromIp}>
             <HomePage />
         </CountryContext.Provider>
-        </DarkMode>
+    )
 };
 
 export default App;
