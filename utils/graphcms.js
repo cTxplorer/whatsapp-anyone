@@ -43,6 +43,10 @@ export async function getPostBySlug(slug) {
         }
         slug
         title
+        coverImage {
+          url
+          altText
+        }
         seoOverride {
           title
           description

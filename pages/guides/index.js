@@ -13,8 +13,6 @@ export default function Post({ posts = [] }) {
           <Head>
         <link rel="canonical" href={websiteUrl}></link>
 
-        {process.env.BUILD_ENV !== 'production' && <meta name="robots" content="noindex, nofollow" />}
-
         <title>{title}</title>
 
         {/* Primary Meta Tags */}

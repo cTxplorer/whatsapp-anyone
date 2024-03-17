@@ -4,7 +4,6 @@ import ErrorPage from "next/error";
 import { getPostBySlug, getAllPosts } from '../../utils/graphcms';
 
 export default function Post({ post, allPosts }) {
-  console.log({post})
   if (!post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -17,8 +16,6 @@ export default function Post({ post, allPosts }) {
     <>
       <Head>
         <link rel="canonical" href={websiteUrl}></link>
-
-        {process.env.BUILD_ENV !== 'production' && <meta name="robots" content="noindex, nofollow" />}
 
         <title>{title}</title>
 
@@ -48,18 +45,19 @@ export default function Post({ post, allPosts }) {
       <main style={{ maxWidth: 600, margin: '0 auto', padding: 24 }}>
         <h3>{post.title}</h3>
         <div className="content">
-          {post.content?.html ? (
+          {post.coverImage ? <img src={post.coverImage.url} alt={post.coverImage.altText || ''} maxWidth={600} width="100%" /> : ''}
+
+          {post.content ? (
             <div dangerouslySetInnerHTML={{ __html: post.content.html }} />
-          ) : <>loading..</>
-          }
+          ) : ''}
         </div>
 
         <div style={{ marginTop: 64, paddingTop: 32, borderTop: '1px solid grey' }}>
           Liked this guide? Check <Link href="/guides">more how-to guides to increase WhatsApp productivity</Link>
         </div>
-        {allPosts?.length ? <div>
+        {allPosts?.length ? <div style={{ marginTop: 16 }}>
+          All guides:
           <ul>
-            Other guides:
             {
               allPosts.map((post) => (
                 <li key={post.slug}>
@@ -76,9 +74,7 @@ export default function Post({ post, allPosts }) {
 }
 
 export async function getStaticProps({ params }) {
-  console.log({ slug: params.slug });
   const [post, allPosts] = await Promise.all([getPostBySlug(params.slug), getAllPosts()]);
-  console.log({ post, allPosts });
   return {
     props: {
       post,
@@ -89,7 +85,6 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const posts = await getAllPosts();
-  console.log({ posts })
   return {
     paths: posts.map(({ slug }) => ({
       params: { slug },
