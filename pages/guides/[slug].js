@@ -62,7 +62,7 @@ export default function Post({ post, allPosts }) {
             Other guides:
             {
               allPosts.map((post) => (
-                <li>
+                <li key={post.slug}>
                   <Link href={`/guides/${ post.slug }`}>{post.title}</Link>
                   <p style={{ marginTop: 4 }}>{post.excerpt}</p>
                 </li>

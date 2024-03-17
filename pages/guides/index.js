@@ -46,7 +46,7 @@ export default function Post({ posts = [] }) {
           <ul>
             {
               posts.map((post) => (
-                <li>
+                <li key={post.slug}>
                   <Link href={`/guides/${ post.slug }`}>{post.title}</Link>
                   <p style={{marginTop: 4}}>{post.excerpt}</p>
                 </li>

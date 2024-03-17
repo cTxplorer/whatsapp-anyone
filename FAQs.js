@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const faqs = [
   {
     q: <>How to WhatsApp without saving number?</>,
@@ -47,6 +49,10 @@ export const faqs = [
   {
     q: <>Does the tool support WhatsApp Web?</>,
     a: <>Yes, WhatsApp Anyone also supports WhatsApp Web to send message or call unsaved number. Based on whether WhatsApp app is installed, you will either be redirected to WA app or WA web.</>
+  },
+  {
+    q: <>Do you have any how-to guides?</>,
+    a: <>Read our <Link href="/guides">how-to guides to increase WhatsApp productivity</Link></>
   },
   {
     q: <>Does WhatsApp Anyone have Android and iOS app?</>,
