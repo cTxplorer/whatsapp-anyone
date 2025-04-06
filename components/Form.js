@@ -1,3 +1,4 @@
+import React from 'react';
 import IntlTelInput from 'react-intl-tel-input';
 import { posthog } from 'posthog-js'
 
