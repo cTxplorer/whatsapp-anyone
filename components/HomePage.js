@@ -51,9 +51,9 @@ const HomePage = () => {
                   <div>without saving contact</div>
                 </li>
                 <li className="feature-li" id="a2hs-anchor">
-                  <h3>No app installation&nbsp;</h3>
+                  <h3>Easy access from homescreen&nbsp;</h3>
                   <div>
-                  <span>light-weight · secure</span>
+                  <span>light-weight · </span>
                   {showA2HS && " · "}
                     <span onClick={onA2hsClickHandler} className={`a2hs ${ showA2HS ? 'a2hs-loaded' : '' }`}>
                       {showA2HS ? "Add to Home Screen 📱" : ""}

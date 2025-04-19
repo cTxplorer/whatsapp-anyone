@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
           <meta name="msapplication-TileColor" content="#191919" />
           <link rel="manifest" href="/manifest.json" />
 
-          {process.env.BUILD_ENV !== 'production' && <meta name="robots" content="noindex, nofollow" />}
+          {process.env.NODE_ENV !== 'production' && <meta name="robots" content="noindex, nofollow" />}
 
           <link rel="icon" href="favicon/favicon.ico" />
           <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />

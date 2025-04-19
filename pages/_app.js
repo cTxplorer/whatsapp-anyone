@@ -1,5 +1,5 @@
 import '../styles/global.css';
-import 'react-intl-tel-input/dist/main.css';
+import 'react-phone-input-2/lib/bootstrap.css'
 import posthog from "posthog-js";
 import { PostHogProvider } from 'posthog-js/react';
 import DarkMode from '../components/DarkMode';

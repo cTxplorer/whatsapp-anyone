@@ -18,7 +18,7 @@ WhatsApp Anyone is a tool to start WhatsApp chat with an unknown number, without
 * [next.js](nextjs.org) (a [react.js](reactjs.org) framework) - for server side rendering
 * [next-offline](https://github.com/hanford/next-offline) - for PWA
 * vanilla HTML & CSS
-* [React-Intl-Tel-Input](https://www.npmjs.com/package/react-intl-tel-input)
+* [React-Phone-Input-2](https://www.npmjs.com/package/react-phone-input-2)
 
 
 ### Installation

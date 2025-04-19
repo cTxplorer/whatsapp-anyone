@@ -1,5 +1,7 @@
-import IntlTelInput from 'react-intl-tel-input';
-import { posthog } from 'posthog-js'
+import React from 'react';
+import PhoneInput from 'react-phone-input-2';
+import { posthog } from 'posthog-js';
+import { isPossibleNumber } from 'libphonenumber-js';
 
 class Form extends React.Component {
   constructor(props) {
@@ -7,30 +9,24 @@ class Form extends React.Component {
     this.state = {
       contactVal: '',
       contact: '',
-      messageText: 'Hello 👋',
+      messageText: 'Hi!',
       showCCPrompt: false,
     }
   }
 
-  onSelectFlag = (inputVal, countryDetails, number, isValid) => {
-    if (countryDetails.iso2)
-      localStorage.setItem("lastSelectedCountryIso2", countryDetails.iso2);
+  onPhoneChange = (value, country) => {
+    let isValid = false // Basic validation
+    if (country.countryCode) {
+      localStorage.setItem("lastSelectedCountryIso2", country.countryCode);
+      isValid = isPossibleNumber(value, country.countryCode?.toUpperCase());
+    }
     this.setState({
-      contactVal: inputVal.replace(/[^0-9]/g, ''),
-      contact: number.replace(/[^0-9]/g, ''),
+      contactVal: value,
+      contact: value,
       isValid,
       showCCPrompt: false,
     });
     this.forceUpdate();
-  }
-
-  onPhoneNumberChange = (isValid, inputVal, countryDetails, number) => {
-    this.setState({
-      contactVal: inputVal.replace(/[^0-9]/g, ''),
-      contact: number.replace(/[^0-9]/g, ''),
-      isValid,
-      showCCPrompt: false,
-    });
   }
 
   handleSubmit = (ev) => {
@@ -53,69 +49,36 @@ class Form extends React.Component {
   }
 
   render() {
-    const { country} = this.props;
+    const { country } = this.props;
     return (
       <form className="wa-form" onSubmit={this.handleSubmit}>
-        {/* <div className={`error ${this.state.showCCPrompt ? 'visible' : ''}`}>
-          <div className="arrow">⤴</div> <div> contact seems to be incorrect 👀</div>
-        </div> */}
+        <div className={`error ${this.state.showCCPrompt ? 'visible show-error' : ''}`}>
+          <div className="error-arrow">⤴</div>
+          <div className='error-text'>the phone number seems correct!</div>
+        </div>
         <div className="form-inputs">
-          <IntlTelInput
-            key={country}
-            defaultCountry={country}
-            autoFocus
-            preferredCountries={['in', 'ca','my','sg','gb','us']}
-            containerClassName="intl-tel-input"
-            inputClassName={this.state.showCCPrompt ? 'show-error' : ''}
-            fieldName="contact"
-            onPhoneNumberChange={this.onPhoneNumberChange}
-            onSelectFlag={this.onSelectFlag}
-          />
-          <button type="submit" id="primary-cta" style={{opacity: this.state.isValid ? 1 : 0.7}}>Open WhatsApp Chat</button>
+          <div className="phone-input-container-1">
+            <PhoneInput
+              country={country || 'in'}
+              value={this.state.contactVal}
+              onChange={this.onPhoneChange}
+              preferredCountries={['in', 'ca', 'my', 'sg', 'gb', 'us']}
+              dropdownClass='country-list-custom'
+              buttonClass='selected-flag-btn-custom'
+              searchClass='search-container-custom'
+              inputProps={{
+                name: 'phone',
+              }}
+              enableSearch={true}
+              searchPlaceholder="Search country"
+              jumpCursorToEnd
+            />
+          </div>
+          <button type="submit" id="primary-cta" style={{ opacity: this.state.isValid ? 1 : 0.9 }}>
+            Open in WhatsApp
+          </button>
         </div>
       </form>
-      // <>
-      // <style jsx global>{`
-      //   #wa-form > * {
-      //     max-width: 100%;
-      //     width: 400px;
-      //   }
-      // `}</style>
-
-      // <form onSubmit={this.handleSubmit} id="wa-form" className="my-5 d-flex flex-column align-items-center">
-      //   {/* <CountryDropdown
-      //     name="countryCode"
-      //     value={this.state.countryCode}
-      //     onChange={this.handleInputChange}
-      //   /> */}
-
-      //   <div className="form-group">
-      //     <div className="input-group">
-      //       {/* <div className="input-group-prepend">
-      //         <span className="input-group-text">{this.state.countryCode}</span>
-      //       </div> */}
-      //       <input
-      //         name="contact"
-      //         type="tel"
-      //         onChange={this.handleInputChange}
-      //         className="form-control form-control-lg"
-      //         placeholder="contact number"
-      //       />
-      //     </div>
-      //   </div>
-
-      //   {/* <div className="form-group">
-      //     <textarea
-      //       className="form-control"
-      //       onChange={this.handleInputChange}
-      //       name="messageText"
-      //       rows="3"
-      //       placeholder="Message (Optional)"></textarea>
-      //   </div> */}
-
-      //   <button type="submit" className="btn btn-success" >Start WhatsApp Chat</button>
-      // </form>
-      // </>
     )
   }
 }
